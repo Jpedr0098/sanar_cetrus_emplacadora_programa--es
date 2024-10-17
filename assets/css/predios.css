@@ -40,6 +40,14 @@ main {
     text-align: center;
 }
 
+.cabecalho2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4vh;
+    text-align: center;
+}
+
 .cabecalho h2{
     font-size: 3vh;
     font-weight: bold;
@@ -66,7 +74,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     width: 80vw;
     min-height: 50vh;
     background-color: var(--branco);
@@ -75,10 +83,11 @@ main {
 
 .curso {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: 1.3svh;
+    font-size: 1.2vh;
     margin: 10px 5px 5px 5px;
 }
 
@@ -87,11 +96,11 @@ main {
     justify-content: center;
     align-items: center;
     background-color: var(--Cetrus-02);
-    width: 70vw;
+    width: 80%;
     height: 5vh;
     border-radius: 15px;
     color: var(--branco);
-    font-size: 1.7vh;
+    font-size: 1.5vh;
     margin: 5px 0;
 }
 
@@ -104,24 +113,157 @@ main {
     text-align: center;
     font-size: 1.5vh;
     font-weight: 400;
-    margin: 5px 0;
-}
-
-.andares p {
-    font-size: 3.2vh;
-}
-
-.turmas {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    text-align: center;
     margin: 5px 0 10px 0;
 }
 
-.turmas h1 {
-    font-size: 2vh;
-    font-weight: bold;
+.andares p {
+    font-size: 3vh;
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Cetrus-02);
+    width: 80%;
+    height: 5vh;
+    border-radius: 15px;
+    color: var(--branco);
+    font-size: 1.5vh;
+    margin: 10px 0;
+}
+
+.periodo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Cetrus-02);
+    width: 80%;
+    height: 5vh;
+    border-radius: 15px;
+    color: var(--branco);
+    font-size: 1.5vh;
+}
+
+@media (min-width: 720px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: left;
+        margin-left: 5vw;
+    }
+
+    header {
+        margin: 0vh;
+        margin-left: 5vw;
+        color: var(--branco);
+    }
+
+    .evento {
+        width: 16vw; /* Aumenta para desktops */
+        margin: 20px;
+        min-height: 35vh;
+        justify-content: space-between;
+    }
+
+    .horario {
+        font-size: 1.5vh;
+    }
+
+    .cabecalho {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 3vh;
+        text-align: center;
+        margin-bottom: 3vh;
+    }
+    
+    .cabecalho h2{
+        display: block;
+        width: 200px;
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    
+    .cabecalho img {
+        width: 16vw;
+        margin-left: 2vw;
+        margin-bottom: 0px;
+    }
+
+    .localCetrus h1{
+        font-size: 5vh;
+        margin-left: 20vw;
+    }
+    .localCetrus p{
+        font-size: 3vh;
+        margin-left: 20vw;
+    }
+
+    .cabecalho2 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .curso {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1vh;
+        height: 100%;
+        margin: 10px;
+    }
+    
+    .horario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--Cetrus-02);
+        width: 80%;
+        height: 5vh;
+        border-radius: 15px;
+        color: var(--branco);
+        font-size: 1vh;
+        margin: 5px 0;
+    }
+    
+    .andares {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        font-size: 1vh;
+        font-weight: 400;
+        margin: 10px 0 10px 0;
+    }
+    
+    .andares p {
+        font-size: 2.4vh;
+    }
+
+    .data {
+        background-color: var(--Cetrus-02);
+        width: 12%;
+        height: 10%;
+        border-radius: 15px;
+        color: var(--branco);
+        font-size: 1.5vh;
+        margin-left: 14vw;
+    }
+
+    .periodo {
+        background-color: var(--Cetrus-02);
+        width: 12%;
+        height: 10%;
+        border-radius: 15px;
+        color: var(--branco);
+        font-size: 1.5vh;
+        margin-left: 10px;
+    }
 }

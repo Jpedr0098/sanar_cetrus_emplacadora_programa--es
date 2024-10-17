@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --Cetrus-01: #002452;
+    --Cetrus-02: #003B6C;
+    --Cetrus-03: #3E88C2;
+    --Cetrus-04: #3EADFF;
+    --branco: #ffffff;
+    --cinza: #E6E6E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(90deg, var(--Cetrus-01), var(--Cetrus-03));
+    font-family: "Poppins", serif;
+    font-weight: 400;
+}
+
+header {
+    margin: 2vh;
+    color: var(--branco);
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Ajustes para cabecalho */
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 4vh 0;
+}
+
+.cabecalho img {
+    width: 60vw; /* Menor largura para telas pequenas */
+    margin-bottom: 10px;
+}
+
+.cabecalho h2 {
+    font-size: 2.5vh;
+    font-weight: bold;
+}
+
+/* Evento e informações */
+.evento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 80vw;
+    min-height: 40vh;
+    background-color: var(--branco);
+    border-radius: 25px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.curso {
+    text-align: center;
+    font-size: 1.5vh;
+}
+
+.horario {
+    background-color: var(--Cetrus-02);
+    width: 70%;
+    height: 5vh;
+    border-radius: 15px;
+    color: var(--branco);
+    font-size: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.andares {
+    text-align: center;
+    font-size: 1.5vh;
+    font-weight: 400;
+}
+
+/* Responsividade */
+@media (min-width: 768px) {
+    .cabecalho {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .cabecalho img {
+        width: 30vw;
+    }
+
+    .evento {
+        width: 60vw; /* Aumenta para tablets */
+        min-height: 30vh;
+    }
+
+    .horario {
+        width: 50%;
+        font-size: 2.5vh;
+    }
+
+    .andares p {
+        font-size: 2.5vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .evento {
+        width: 40vw; /* Aumenta para desktops */
+        margin: 15px;
+    }
+
+    .horario {
+        font-size: 3vh;
+    }
+}
