@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dados da Planilha Google</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 600px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <table id="tabela-dados">
+    <thead>
+      <tr>
+        <th>Coluna 1</th>
+        <th>Coluna 2</th>
+        <th>Coluna 3</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const spreadsheetId = '19l6EyZDCQFkGCFO2HmBNIVAvs3EdjVgnc9KyQXubWlw';  // ID correto da planilha
+    const range = 'Página1';  // Nome exato da aba
+
+    async function carregarDados() {
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+        throw new Error(`Erro: ${response.status} - ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        const linhas = data.values;
+
+        console.log(linhas)
+
+        const tbody = document.querySelector('#tabela-dados tbody');
+        tbody.innerHTML = ''; // Limpa o conteúdo anterior
+
+        linhas.forEach((linha) => {
+        const tr = document.createElement('tr');
+        linha.forEach((celula) => {
+            const td = document.createElement('td');
+            td.textContent = celula;
+            tr.appendChild(td);
+        });
+        tbody.appendChild(tr);
+        });
+    } catch (error) {
+        console.error('Erro ao carregar os dados:', error);
+        alert(`Erro ao carregar dados: ${error.message}`);
+    }
+    }
+    //setInterval(carregarDados, 3000); 
+    carregarDados(); // Chama a função ao carregar a página
+
+  </script>
+
+</body>
+</html>
