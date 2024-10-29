@@ -27,7 +27,7 @@ async function carregarDados() {
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
-                document.getElementById("dt_site").innerHTML = linha[9]
+                document.getElementById("dt_site").innerHTML = `Data: ${linha[9]}`
                 return
             }
             
