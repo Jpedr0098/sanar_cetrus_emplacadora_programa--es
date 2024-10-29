@@ -26,7 +26,11 @@ async function carregarDados() {
         const periodo = obterPeriodoDoDia()
 
         plan.forEach(linha => {
-            if (linha[0] == "Data") return
+            if (linha[0] == "Data") {
+                document.getElementById("dt_site").innerHTML = linha[9]
+                return
+            }
+            
 
             if (linha[1] != periodo) return
 
@@ -66,12 +70,12 @@ function obterPeriodoDoDia() {
     const agora = new Date();  // Obtém a data e hora atual
     const hora = agora.getHours();  // Extrai a hora (0 a 23)
 
-    const dia = String(agora.getDate()).padStart(2, '0');  // Extrai o dia e garante 2 dígitos
-    const mes = String(agora.getMonth() + 1).padStart(2, '0');  // Extrai o mês (0 a 11) e ajusta
-    const ano = agora.getFullYear();
-    const data = `Data: ${dia}/${mes}/${ano}`
+    // const dia = String(agora.getDate()).padStart(2, '0');  // Extrai o dia e garante 2 dígitos
+    // const mes = String(agora.getMonth() + 1).padStart(2, '0');  // Extrai o mês (0 a 11) e ajusta
+    // const ano = agora.getFullYear();
+    // const data = `Data: ${dia}/${mes}/${ano}`
 
-    document.getElementById("dt_site").innerHTML = data
+    // document.getElementById("dt_site").innerHTML = data
 
     if (hora >= 0 && hora < 12) {
         document.getElementById("periodo_site").innerHTML = "Periodo: Manhã"
