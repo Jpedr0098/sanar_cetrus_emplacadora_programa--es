@@ -6,34 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (botaoPredio1) {
         botaoPredio1.addEventListener('click', function () {
-            window.location.href = 'predios.html';
-            let p = {
-                predio:"Prédio 01",
-                local: "Av. Jabaquara, 474"
-            }
-            localStorage.setItem("predios", JSON.stringify(p))
+            window.location.href = 'predio01.html';
         });
     }
 
     if (botaoPredio2) {
         botaoPredio2.addEventListener('click', function () {
-            window.location.href = 'predios.html';
-            let p = {
-                predio:"Prédio 02",
-                local: "Av. Jabaquara, 491"
-            }
-            localStorage.setItem("predios", JSON.stringify(p))
+            window.location.href = 'predio02.html';
         });
     }
 
     if (botaoPredio3) {
         botaoPredio3.addEventListener('click', function () {
-            window.location.href = 'predios.html';
-            let p = {
-                predio:"Prédio 03",
-                local: "Av. Jabaquara, 1280"
-            }
-            localStorage.setItem("predios", JSON.stringify(p))
+            window.location.href = 'predio03.html';
         });
     }
 });

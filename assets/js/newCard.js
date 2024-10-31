@@ -5,10 +5,10 @@ async function carregarDados() {
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
     let valPredio
 
-    const p = JSON.parse(localStorage.getItem("predios")) || {};
-    if (p.predio == 'Prédio 01') valPredio = "PRÉDIO I"
-    if (p.predio == 'Prédio 02') valPredio = "PRÉDIO II"
-    if (p.predio == 'Prédio 03') valPredio = "PRÉDIO III"
+    const p = document.querySelector(".localCetrus h1").innerHTML
+    if (p == 'Prédio 01') valPredio = "PRÉDIO I"
+    if (p == 'Prédio 02') valPredio = "PRÉDIO II"
+    if (p == 'Prédio 03') valPredio = "PRÉDIO III"
 
     try {
         const response = await fetch(url);
@@ -86,5 +86,5 @@ function obterPeriodoDoDia() {
     }
 }
 
-setInterval(carregarDados, 300000); 
+setInterval(carregarDados, 300000); //carrega a pagina a cada 5min
 carregarDados(); // Chama a função ao carregar a página
