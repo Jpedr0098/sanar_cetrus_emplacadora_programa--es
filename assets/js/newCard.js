@@ -86,5 +86,5 @@ function obterPeriodoDoDia() {
     }
 }
 
-setInterval(carregarDados, 30000); 
+setInterval(carregarDados, 300000); 
 carregarDados(); // Chama a função ao carregar a página
