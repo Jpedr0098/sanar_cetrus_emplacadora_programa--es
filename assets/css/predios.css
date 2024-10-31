@@ -160,8 +160,6 @@ main {
     main {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: left;
-        margin-left: 5vw;
     }
 
     header {
@@ -172,7 +170,7 @@ main {
 
     .evento {
         width: 16vw; /* Aumenta para desktops */
-        margin: 20px;
+        margin: 16px;
         min-height: 35vh;
         justify-content: space-between;
     }
