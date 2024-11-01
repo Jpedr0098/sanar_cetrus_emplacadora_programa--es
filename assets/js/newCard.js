@@ -78,10 +78,10 @@ function obterPeriodoDoDia() {
     // document.getElementById("dt_site").innerHTML = data
 
     if (hora >= 0 && hora < 12) {
-        document.getElementById("periodo_site").innerHTML = "Periodo: Manhã"
+        document.getElementById("periodo_site").innerHTML = "Período: Manhã"
         return "Manhã";
     } else {
-        document.getElementById("periodo_site").innerHTML = "Periodo: Tarde"
+        document.getElementById("periodo_site").innerHTML = "Período: Tarde"
         return "Tarde";
     }
 }
