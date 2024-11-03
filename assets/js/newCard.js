@@ -2,7 +2,9 @@ const spreadsheetId = '19l6EyZDCQFkGCFO2HmBNIVAvs3EdjVgnc9KyQXubWlw';  // ID cor
 const range = 'PLACAS';  // Nome exato da aba
 
 async function carregarDados() {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
+    let cache = new Date().getTime();
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
+
     let valPredio
 
     const p = document.querySelector(".localCetrus h1").innerHTML
@@ -11,14 +13,20 @@ async function carregarDados() {
     if (p == 'Prédio 03') valPredio = "PRÉDIO III"
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(url, {
+            method: 'GET',
+            cache: 'no-store' // Configura para não usar cache
+        });
 
         if (!response.ok) {
-        throw new Error(`Erro: ${response.status} - ${response.statusText}`);
+            console.log("ERRO");
+            throw new Error(`Erro: ${response.status} - ${response.statusText}`);
         }
 
         const data = await response.json();
         const plan = data.values;
+
+        console.log(plan)
 
         const container = document.getElementById("cardsResult")
         container.innerHTML=''
@@ -86,5 +94,5 @@ function obterPeriodoDoDia() {
     }
 }
 
-setInterval(carregarDados, 300000); //carrega a pagina a cada 5min
+setInterval(carregarDados, 3000); //carrega a pagina a cada 5min
 carregarDados(); // Chama a função ao carregar a página
