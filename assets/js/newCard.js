@@ -94,5 +94,5 @@ function obterPeriodoDoDia() {
     }
 }
 
-setInterval(carregarDados, 3000); //carrega a pagina a cada 5min
+setInterval(carregarDados, 300000); //carrega a pagina a cada 5min
 carregarDados(); // Chama a função ao carregar a página
