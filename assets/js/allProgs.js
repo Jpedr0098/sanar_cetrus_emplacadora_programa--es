@@ -2,46 +2,32 @@ const spreadsheetId = '19l6EyZDCQFkGCFO2HmBNIVAvs3EdjVgnc9KyQXubWlw';  // ID cor
 const range = 'PLACAS';  // Nome exato da aba
 
 async function carregarDados() {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
-
-    let valPredio
-
-    const p = document.querySelector(".localCetrus h1").innerHTML
-    if (p == 'Prédio 01') valPredio = "PRÉDIO I"
-    if (p == 'Prédio 02') valPredio = "PRÉDIO II"
-    if (p == 'Prédio 03') valPredio = "PRÉDIO III"
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
 
     try {
-        const response = await fetch(url, {
-            method: 'GET',
-            cache: 'no-store' // Configura para não usar cache
-        });
+        const response = await fetch(url);
 
         if (!response.ok) {
-            console.log("ERRO");
-            throw new Error(`Erro: ${response.status} - ${response.statusText}`);
+        throw new Error(`Erro: ${response.status} - ${response.statusText}`);
         }
 
         const data = await response.json();
         const plan = data.values;
 
-        console.log(plan)
-
         const container = document.getElementById("cardsResult")
         container.innerHTML=''
 
-        const periodo = obterPeriodoDoDia()
+        const container2 = document.getElementById("cardsResult2")
+        container.innerHTML=''
+
+        const container3 = document.getElementById("cardsResult3")
+        container.innerHTML=''
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
                 document.getElementById("dt_site").innerHTML = `Data: ${linha[9]}`
                 return
             }
-            
-
-            if (linha[1] != periodo) return
-
-            if(linha[2] != valPredio) return
 
             const model = `<div class="curso">
                                 <h1></h1>
@@ -65,24 +51,14 @@ async function carregarDados() {
                 card.appendChild(notificacao);
             }
 
-            container.appendChild(card)
+            if(linha[2] == "PRÉDIO I")container.appendChild(card)
+            if(linha[2] == "PRÉDIO II")container2.appendChild(card)
+            if(linha[2] == "PRÉDIO III")container3.appendChild(card)
+            
         });
 
     } catch (error) {
         console.error('Erro ao carregar os dados:', error);
-    }
-}
-
-function obterPeriodoDoDia() {
-    const agora = new Date();  // Obtém a data e hora atual
-    const hora = agora.getHours();  // Extrai a hora (0 a 23)
-
-    if (hora >= 0 && hora < 12) {
-        document.getElementById("periodo_site").innerHTML = "Período: Manhã"
-        return "Manhã";
-    } else {
-        document.getElementById("periodo_site").innerHTML = "Período: Tarde"
-        return "Tarde";
     }
 }
 

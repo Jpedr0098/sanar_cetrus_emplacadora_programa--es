@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const botaoPredio1 = document.getElementById("predio1");
     const botaoPredio2 = document.getElementById("predio2");
     const botaoPredio3 = document.getElementById("predio3");
+    const allProgmans = document.getElementById("allProg");
 
     if (botaoPredio1) {
         botaoPredio1.addEventListener('click', function () {
@@ -19,6 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (botaoPredio3) {
         botaoPredio3.addEventListener('click', function () {
             window.location.href = 'predio03.html';
+        });
+    }
+
+    if (allProgmans) {
+        allProgmans.addEventListener('click', function () {
+            window.location.href = 'allProgramacoes.html';
         });
     }
 });
