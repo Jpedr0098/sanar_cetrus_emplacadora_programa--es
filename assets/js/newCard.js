@@ -2,8 +2,7 @@ const spreadsheetId = '19l6EyZDCQFkGCFO2HmBNIVAvs3EdjVgnc9KyQXubWlw';  // ID cor
 const range = 'PLACAS';  // Nome exato da aba
 
 async function carregarDados() {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
-
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
     let valPredio
 
     const p = document.querySelector(".localCetrus h1").innerHTML
