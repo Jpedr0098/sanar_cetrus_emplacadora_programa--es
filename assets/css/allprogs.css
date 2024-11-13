@@ -161,7 +161,7 @@ header {
 }
 
 @media (min-width: 720px) {
-    #cardsResult {
+    #cardsResult, #cardsResult2, #cardsResult3 {
         flex-direction: row;
         flex-wrap: wrap;
     }
