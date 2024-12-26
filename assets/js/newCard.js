@@ -67,7 +67,7 @@ async function carregarDados() {
              card.classList.add("evento")
              card.innerHTML = model
 
-            if (linha[6] == 'FALSE') {
+            if (linha[7] == 'FALSE') {
                 const notificacao = document.createElement('span');
                 notificacao.classList.add('notificacao');
                 card.appendChild(notificacao);
