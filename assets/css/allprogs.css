@@ -34,6 +34,13 @@ header {
     justify-content: center;
 }
 
+#nCurso {
+    font-size: 1.2vh;
+    font-weight: 400;
+    margin: 10px 5px 5px 5px;
+    color: black;
+}
+
 .cabecalho {
     display: flex;
     flex-direction: column;
@@ -92,6 +99,17 @@ header {
     height: 12px;
     background-color: var(--Cetrus-04);
     border-radius: 50%;
+}
+
+.turmaCurso {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2vh;
+    margin: 10px 5px 5px 5px;
+    color: black;
 }
 
 .curso {
@@ -216,6 +234,18 @@ header {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .turmaCurso {
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 1vh;
+        height: 100%;
+        margin: 10px;
+        color: black;
     }
 
     .curso {

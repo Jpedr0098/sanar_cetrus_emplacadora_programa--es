@@ -33,9 +33,18 @@ async function carregarDados() {
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
-                document.getElementById("dt_site").innerHTML = `Data: ${linha[9]}`
+                document.getElementById("dt_site").innerHTML = `Data: ${linha[11]}`
                 return
             }
+
+            let numTurma
+            if (linha[8] == 'TRUE') {
+                numTurma = String(linha[4])
+                numTurma = numTurma.split(" - ") [1]
+            } else {
+                numTurma = ''
+            }
+
             
 
             if (linha[1] != periodo) return
@@ -43,15 +52,15 @@ async function carregarDados() {
             if(linha[2] != valPredio) return
 
             const model = `<div class="curso">
-                                <h1></h1>
-                                <h1>${linha[4]}</h1>
-                            </div>
-                            <div class="horario">
+                                <h1 class="nCurso">${numTurma}</h1>
                                 <h1>${linha[5]}</h1>
                             </div>
+                            <div class="horario">
+                                <h1>${linha[6]}</h1>
+                            </div>
                             <div class="andares">
-                                <h1>${linha[8]}</h1>
-                                <p>${linha[7]}</p>
+                                <h1>${linha[10]}</h1>
+                                <p>${linha[9]}</p>
                             </div>`
             
              const card = document.createElement("div")

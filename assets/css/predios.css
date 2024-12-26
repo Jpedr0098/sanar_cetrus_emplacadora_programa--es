@@ -32,6 +32,10 @@ main {
     justify-content: center;
 }
 
+.nCurso {
+    margin-bottom: 1vh;
+}
+
 .cabecalho {
     display: flex;
     flex-direction: column;
