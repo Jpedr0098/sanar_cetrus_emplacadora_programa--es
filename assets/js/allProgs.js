@@ -14,6 +14,8 @@ async function carregarDados() {
         const data = await response.json();
         const plan = data.values;
 
+        
+
         const container = document.getElementById("cardsResult")
         container.innerHTML=''
 
@@ -25,27 +27,35 @@ async function carregarDados() {
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
-                document.getElementById("dt_site").innerHTML = `Data: ${linha[9]}`
+                document.getElementById("dt_site").innerHTML = `Data: ${linha[11]}`
                 return
             }
 
+            let numTurma
+            if (linha[8] == 'TRUE') {
+                numTurma = String(linha[4])
+                numTurma = numTurma.split(" - ") [1]
+            } else {
+                numTurma = ''
+            }
+
             const model = `<div class="curso">
-                                <h1></h1>
-                                <h1>${linha[4]}</h1>
-                            </div>
-                            <div class="horario">
+                                <h1 class="nCurso">${numTurma}</h1>
                                 <h1>${linha[5]}</h1>
                             </div>
+                            <div class="horario">
+                                <h1>${linha[6]}</h1>
+                            </div>
                             <div class="andares">
-                                <h1>${linha[8]}</h1>
-                                <p>${linha[7]}</p>
+                                <h1>${linha[10]}</h1>
+                                <p>${linha[9]}</p>
                             </div>`
             
              const card = document.createElement("div")
              card.classList.add("evento")
              card.innerHTML = model
 
-            if (linha[6] == 'FALSE') {
+            if (linha[7] == 'FALSE') {
                 const notificacao = document.createElement('span');
                 notificacao.classList.add('notificacao');
                 card.appendChild(notificacao);

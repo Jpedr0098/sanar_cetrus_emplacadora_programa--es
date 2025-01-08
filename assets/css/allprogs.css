@@ -101,17 +101,6 @@ header {
     border-radius: 50%;
 }
 
-.turmaCurso {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 1.2vh;
-    margin: 10px 5px 5px 5px;
-    color: black;
-}
-
 .curso {
     display: flex;
     flex-direction: column;
