@@ -20,10 +20,10 @@ async function carregarDados() {
         container.innerHTML=''
 
         const container2 = document.getElementById("cardsResult2")
-        container.innerHTML=''
+        container2.innerHTML=''
 
         const container3 = document.getElementById("cardsResult3")
-        container.innerHTML=''
+        container3.innerHTML=''
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
