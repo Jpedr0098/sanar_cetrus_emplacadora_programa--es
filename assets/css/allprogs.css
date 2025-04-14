@@ -7,6 +7,12 @@
     --Cetrus-04: #3EADFF;
     --branco:#ffffff;
     --cinza: #E6E6E6;
+    --rosa: #D33C86;
+    --vermelho: #D6373D;
+    --bege: #d7be9e;
+
+    --completude: #D6373D;
+    --DayOne: #d7be9e;
 }
 
 * {
@@ -92,12 +98,80 @@ header {
 }
 
 .notificacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--branco);
     position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 12px;
-    height: 12px;
-    background-color: var(--Cetrus-04);
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--completude);
+    border-radius: 50%;
+}
+.notificacaoDAYONE_Completude {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--DayOne);
+    border-radius: 50%;
+}
+
+.notificacao2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--branco);
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--completude);
+    border-radius: 50%;
+}
+.notificacaoDAYONE_Completude2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 45px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--DayOne);
+    border-radius: 50%;
+}
+
+.notificacaoDAYONE {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--DayOne);
     border-radius: 50%;
 }
 

@@ -27,7 +27,7 @@ async function carregarDados() {
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
-                document.getElementById("dt_site").innerHTML = `Data: ${linha[11]}`
+                document.getElementById("dt_site").innerHTML = `Data: ${linha[12]}`
                 return
             }
 
@@ -55,10 +55,32 @@ async function carregarDados() {
              card.classList.add("evento")
              card.innerHTML = model
 
-            if (linha[7] == 'FALSE') {
-                const notificacao = document.createElement('span');
+             if (linha[7] == 'FALSE' && linha[11] == 'yes') {
+                const notificacao = document.createElement('a');
                 notificacao.classList.add('notificacao');
+                notificacao.innerText = "i";
+                notificacao.href = "https://docs.google.com/spreadsheets/d/1PWVPI6Tqg1a1mT7N1-_A6lzvh1ZA3m1es5JL9GdsIpM/edit?pli=1&gid=780322140#gid=780322140";
                 card.appendChild(notificacao);
+
+                const dayOneNotificacaoC = document.createElement('span');
+                dayOneNotificacaoC.classList.add('notificacaoDAYONE_Completude');
+                dayOneNotificacaoC.innerText = "D1"
+                card.appendChild(dayOneNotificacaoC);
+            }
+
+            else if (linha[7] == 'FALSE') {
+                const notificacao = document.createElement('a');
+                notificacao.classList.add('notificacao');
+                notificacao.innerText = "i";
+                notificacao.href = "https://docs.google.com/spreadsheets/d/1PWVPI6Tqg1a1mT7N1-_A6lzvh1ZA3m1es5JL9GdsIpM/edit?pli=1&gid=780322140#gid=780322140";
+                card.appendChild(notificacao);
+            }
+
+            else if (linha[11] == 'yes') {
+                const dayOneNotificacao = document.createElement('span');
+                dayOneNotificacao.classList.add('notificacaoDAYONE');
+                dayOneNotificacao.innerText = "D1"
+                card.appendChild(dayOneNotificacao);
             }
 
             if(linha[2] == "PRÉDIO I")container.appendChild(card)

@@ -33,7 +33,7 @@ async function carregarDados() {
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
-                document.getElementById("dt_site").innerHTML = `Data: ${linha[11]}`
+                document.getElementById("dt_site").innerHTML = `Data: ${linha[12]}`
                 return
             }
 
@@ -67,10 +67,28 @@ async function carregarDados() {
              card.classList.add("evento")
              card.innerHTML = model
 
-            if (linha[7] == 'FALSE') {
+            if (linha[7] == 'FALSE' && linha[11] == 'yes') {
                 const notificacao = document.createElement('span');
                 notificacao.classList.add('notificacao');
                 card.appendChild(notificacao);
+
+                const dayOneNotificacaoC = document.createElement('span');
+                dayOneNotificacaoC.classList.add('notificacaoDAYONE_Completude');
+                dayOneNotificacaoC.innerText = "D1"
+                card.appendChild(dayOneNotificacaoC);
+            }
+
+            else if (linha[7] == 'FALSE') {
+                const notificacao = document.createElement('span');
+                notificacao.classList.add('notificacao');
+                card.appendChild(notificacao);
+            }
+
+            else if (linha[11] == 'yes') {
+                const dayOneNotificacao = document.createElement('span');
+                dayOneNotificacao.classList.add('notificacaoDAYONE');
+                dayOneNotificacao.innerText = "D1"
+                card.appendChild(dayOneNotificacao);
             }
 
             container.appendChild(card)
