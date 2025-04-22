@@ -93,8 +93,8 @@ main {
 
 .notificacao {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 12px;
     width: 12px;
     height: 12px;
     background-color: var(--completude);
@@ -106,8 +106,8 @@ main {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 15px;
-    right: 35px;
+    top: 12px;
+    right: 32px;
     width: 12px;
     height: 12px;
     font-size: 10px;
@@ -122,8 +122,8 @@ main {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 12px;
+    right: 12px;
     width: 12px;
     height: 12px;
     font-size: 10px;
