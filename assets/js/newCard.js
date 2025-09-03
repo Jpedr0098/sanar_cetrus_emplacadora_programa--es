@@ -1,5 +1,5 @@
 const spreadsheetId = '19l6EyZDCQFkGCFO2HmBNIVAvs3EdjVgnc9KyQXubWlw';  // ID correto da planilha
-const range = 'PLACAS';  // Nome exato da aba
+const range = 'Placas_NEW';  // Nome exato da aba
 
 async function carregarDados() {
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?alt=json&key=AIzaSyB45aJ88-iyQzEMUM7Bk99C5gMb0dEAX_E`;
@@ -30,10 +30,10 @@ async function carregarDados() {
         container.innerHTML=''
 
         const periodo = obterPeriodoDoDia()
+        document.getElementById("dt_site").innerHTML = `Data: ${plan[1][0]}`
 
         plan.forEach(linha => {
             if (linha[0] == "Data") {
-                document.getElementById("dt_site").innerHTML = `Data: ${linha[12]}`
                 return
             }
 
