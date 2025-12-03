@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --Fundo-Tela_R: #3EADFF;
-    --Fundo-Tela_L: #8CCFFF;
-    --Fundo-destaque: #007ACC;
+    --Fundo-Tela_R: #730202;
+    --Fundo-Tela_L: #A60303;
+    --Fundo-destaque: #1D5902;
+
     --Cetrus-01: #002452;
     --Cetrus-02: #003B6C;
     --Cetrus-03: #3E88C2;
     --Cetrus-04: #3EADFF;
+
     --branco:#ffffff;
     --cinza: #E6E6E6;
     --rosa: #D33C86;
@@ -17,9 +19,15 @@
     --OUT: #F277A4;
     --OUT2: #F2ACC6;
     --OUT3: #D93D76;
+
     --NOV: #3EADFF;
     --NOV2: #8CCFFF;
     --NOV3: #007ACC;
+
+    --Natal: #F20505;
+    --Natal1: #A60303;
+    --Natal2: #730202;
+    --NatalLetra: #1D5902;
 
     --completude: #D6373D;
     --DayOne: #D33C86;
