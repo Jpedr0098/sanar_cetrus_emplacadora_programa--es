@@ -106,9 +106,12 @@ function obterPeriodoDoDia() {
     if (hora >= 0 && hora < 12) {
         document.getElementById("periodo_site").innerHTML = "Período: Manhã"
         return "Manhã";
-    } else {
+    } else if (hora >= 12 && hora < 18) {
         document.getElementById("periodo_site").innerHTML = "Período: Tarde"
         return "Tarde";
+    } else {
+        document.getElementById("periodo_site").innerHTML = "Período: Noite"
+        return "Noite";
     }
 }
 
